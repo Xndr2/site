@@ -14,7 +14,7 @@ export default function Projects() {
         <link rel="icon" href='/favicon/favicon.ico'/>
       </Head>
       <div className='center_container'>
-        <div class="pic-ctn">
+        <div className="pic-ctn">
           {/* Project 1 */}
           <div className="pic_project">
             <Image src="/images/projects/Abandoned_Banner.jpg" alt="Abandoned Logo" className='project_img' height={700} width={1200} />
