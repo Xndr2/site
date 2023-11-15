@@ -10,7 +10,7 @@ export default function Navbar() {
         <script src="https://kit.fontawesome.com/304ae3bd01.js" crossorigin="anonymous"></script>
       </Head>
       <nav className="navbar_container">
-        <p className="warning">! This Page is NOT made for mobile devices !<br/>I am aware and working on it.</p>
+        {/* <p className="warning">! This Page is NOT made for mobile devices !<br/>I am aware and working on it.</p> */}
         {/* image */}
         <a href="/">
           <Image
