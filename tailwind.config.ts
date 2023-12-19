@@ -37,6 +37,9 @@ const config: Config = {
 			'gradient-conic':
 			'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 		},
+		height: {
+        '128': '32rem',
+      	},
 		animation: {
 				"fade-in": "fade-in 2s ease-in-out forwards",
 				title: "title 1s ease-out forwards",

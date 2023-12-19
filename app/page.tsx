@@ -19,7 +19,7 @@ export default function Home() {
       <Navbar />
       <Particles
         className="absolute inset-0 -z-10"
-        quantity={100}
+        quantity={200}
       />
       <main className="max-w-screen-xl text-center mx-auto h-full animate-title">
         <div className="text-xl pt-20 md:pt-80 px-4">
