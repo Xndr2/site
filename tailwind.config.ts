@@ -39,6 +39,7 @@ const config: Config = {
 		},
 		height: {
         '128': '32rem',
+		'container': '80vh'
       	},
 		animation: {
 				"fade-in": "fade-in 2s ease-in-out forwards",

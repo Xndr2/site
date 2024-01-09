@@ -37,7 +37,6 @@ export default function Home() {
           </h3>
         </div>
       </main>
-      <Footer />
     </>
   )
 }
