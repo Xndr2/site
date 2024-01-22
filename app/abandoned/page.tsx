@@ -8,8 +8,8 @@ import Link from 'next/link'
 import Particles from "../components/particles";
 
 export const metadata: Metadata = {
-    title: 'Xndr | Home',
-    description: 'Home page for Xndr',
+    title: 'Xndr | Abandoned',
+    description: 'Abandoned Project page for Xndr',
     icons: 'icons/XndrPFP.png',
 }
 
