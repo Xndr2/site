@@ -16,7 +16,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Navbar
+        pageName="Home"
+      />
       <Particles
         className="absolute inset-0 -z-10"
         quantity={200}

@@ -2,7 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import HamburgerMenu from './hamburgerMenu'
 
-export default function Navbar() {
+interface NabvarProps {
+    pageName?: string;
+}
+
+export default function Navbar({
+    pageName = "",
+}: NabvarProps) {
     return (
         <>
             <nav>
@@ -15,7 +21,7 @@ export default function Navbar() {
                             className="h-10"
                             alt="Xndr Logo"
                         />
-                        <span className="self-center text-2xl font-bold whitespace-nowrap dark:text-white">Xndr</span>
+                        <span className="self-center text-2xl font-bold whitespace-nowrap dark:text-white">Xndr | {pageName}<p className="text-sm">&copy; Copyright xndr.site</p></span>
                     </a>
                     <HamburgerMenu />
                     <div className="hidden w-full md:block md:w-auto NavbarClass" id="navbar-default">
