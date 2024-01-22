@@ -1,3 +1,4 @@
+import { calculateOverrideValues } from 'next/dist/server/font-utils';
 import type { Config } from 'tailwindcss'
 
 const defaultTheme = require("tailwindcss/defaultTheme");
@@ -41,6 +42,9 @@ const config: Config = {
         '128': '32rem',
 		'container': '80vh'
       	},
+		width: {
+			'button-hover': 'calc(max-content+10px)'
+		},
 		animation: {
 				"fade-in": "fade-in 2s ease-in-out forwards",
 				title: "title 1s ease-out forwards",

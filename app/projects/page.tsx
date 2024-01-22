@@ -30,9 +30,8 @@ export default function Projects() {
             <h2 className="mt-4 leading-6">A Sci-Fi tactical shooter made in&nbsp;
               <Link target="_blank" href="https://www.unrealengine.com/en-US" className="underline">Unreal Engine 5</Link>.
             </h2>
-            <div className="w-max my-4 mx-auto border rounded p-4 cursor-not-allowed">
-              <Link href="#" className="cursor-not-allowed">Info &rarr;</Link>
-            </div>
+
+            <Link href="abandoned" className="flex mt-2 w-max mx-auto border rounded p-4 hover:text-xl">Info &rarr;</Link>
           </div>
           <div className="tile border border-slate-400 hover:border-slate-200 rounded h-56 md:h-full bg-gradient-to-br from-slate-200/5 to-slate-400/10">
             <h1 className="tile-marker mt-4">DiSCORD BOT</h1>
@@ -42,9 +41,8 @@ export default function Projects() {
               <Link target="_blank" href="https://discord.com/developers/docs/intro" className="underline">Discord API</Link>.
               <br />Hosted on <Link target="_blank" href="https://daki.cc" className="underline">Daki.cc</Link>.
             </h2>
-            <div className="w-max my-4 mx-auto border rounded p-4 cursor-not-allowed">
-              <Link href="#" className="cursor-not-allowed">Info &rarr;</Link>
-            </div>
+
+            <Link href="#" className="flex mt-2 w-max mx-auto border rounded p-4 hover:text-xl cursor-not-allowed">Info &rarr;</Link>
           </div>
           <div className="tile border border-slate-400 hover:border-slate-200 rounded h-56 md:h-full bg-gradient-to-br from-slate-200/5 to-slate-400/10">
             <h1 className="tile-marker mt-4">PORTFOLIO / WEBSITE</h1>
@@ -53,9 +51,8 @@ export default function Projects() {
               <Link target="_blank" href="https://tailwindcss.com/" className="underline">Tailwind CSS</Link> and&nbsp;
               <Link target="_blank" href="https://www.typescriptlang.org/" className="underline">TypeScript</Link>.
             </h2>
-            <div className="w-max my-4 mx-auto border rounded p-4 cursor-not-allowed">
-              <Link href="#" className="cursor-not-allowed">Info &rarr;</Link>
-            </div>
+
+            <Link href="#" className="flex mt-2 w-max mx-auto border rounded p-4 hover:text-xl cursor-not-allowed">Info &rarr;</Link>
           </div>
           <div className="tile border border-slate-400 hover:border-slate-200 rounded h-56 md:h-full bg-gradient-to-br from-slate-200/5 to-slate-400/10">
             <h1 className="tile-marker mt-4">RIKI KUURNE</h1>
@@ -65,9 +62,8 @@ export default function Projects() {
               <Link target="_blank" href="https://www.typescriptlang.org/" className="underline">JavaScript</Link>.
               <br />The website for my uncle <Link target="_blank" href="https://rikikuurne.github.io/" className="underline">Riki</Link>. [Link Soon]
             </h2>
-            <div className="w-max my-4 mx-auto border rounded p-4 cursor-not-allowed">
-              <Link href="#" className="cursor-not-allowed">Info &rarr;</Link>
-            </div>
+
+            <Link href="#" className="flex mt-2 w-max mx-auto border rounded p-4 hover:text-xl cursor-not-allowed">Info &rarr;</Link>
           </div>
         </div>
       </main>
