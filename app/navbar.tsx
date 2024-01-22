@@ -21,7 +21,7 @@ export default function Navbar({
                             className="h-10"
                             alt="Xndr Logo"
                         />
-                        <span className="self-center text-2xl whitespace-nowrap dark:text-white">Xndr | {pageName}<p className="text-sm">&copy; Copyright xndr.site</p></span>
+                        <span className="self-center text-lg md:text-2xl whitespace-nowrap dark:text-white">Xndr | {pageName}<p className="text-sm">&copy; Copyright xndr.site</p></span>
                     </a>
                     <HamburgerMenu />
                     <div className="hidden w-full md:block md:w-auto NavbarClass" id="navbar-default">
