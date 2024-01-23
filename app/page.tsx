@@ -30,8 +30,7 @@ export default function Home() {
           <h3 className="text-zinc-500 text-base">
             Currently working on{" "}
             <Link
-              target="_blank"
-              href="/"
+              href="abandoned"
               className="underline duration-500 hover:text-zinc-300"
             >
               Abandoned
