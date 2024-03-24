@@ -1,6 +1,5 @@
 import { calculateOverrideValues } from 'next/dist/server/font-utils';
 import type { Config } from 'tailwindcss'
-
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 const config: Config = {

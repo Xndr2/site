@@ -23,7 +23,7 @@ export default function Projects() {
         className="absolute inset-0 -z-10"
         quantity={100}
       />
-      <main className="max-w-screen-xl text-center mx-auto animate-title mt-4 md:mt-10 overflow-scroll h-128 md:h-96">
+      <main className="max-w-screen-xl text-center mx-auto animate-title mt-4 md:mt-10 md:overflow-hidden h-128 md:h-96">
         <div className="container m-auto w-3/4 md:w-full grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
           <div className="tile border border-slate-400 hover:border-slate-200 rounded h-56 md:h-full bg-gradient-to-br from-slate-200/5 to-slate-400/10 ">
             <h1 className="tile-marker mt-4">ABANDONED</h1>
@@ -33,6 +33,7 @@ export default function Projects() {
 
             <Link href="abandoned" className="flex mt-2 w-max mx-auto border rounded p-4 hover:text-xl">Info &rarr;</Link>
           </div>
+
           <div className="tile border border-slate-400 hover:border-slate-200 rounded h-56 md:h-full bg-gradient-to-br from-slate-200/5 to-slate-400/10">
             <h1 className="tile-marker mt-4">DiSCORD BOT</h1>
             <h2 className="mt-4 leading-6"> Using&nbsp;
@@ -44,6 +45,7 @@ export default function Projects() {
 
             <Link href="#" className="flex mt-2 w-max mx-auto border rounded p-4 hover:text-xl cursor-not-allowed">Info &rarr;</Link>
           </div>
+
           <div className="tile border border-slate-400 hover:border-slate-200 rounded h-56 md:h-full bg-gradient-to-br from-slate-200/5 to-slate-400/10">
             <h1 className="tile-marker mt-4">PORTFOLIO / WEBSITE</h1>
             <h2 className="mt-4 leading-6"> Made with&nbsp;
@@ -54,6 +56,7 @@ export default function Projects() {
 
             <Link href="#" className="flex mt-2 w-max mx-auto border rounded p-4 hover:text-xl cursor-not-allowed">Info &rarr;</Link>
           </div>
+
           <div className="tile border border-slate-400 hover:border-slate-200 rounded h-56 md:h-full bg-gradient-to-br from-slate-200/5 to-slate-400/10">
             <h1 className="tile-marker mt-4">RIKI KUURNE</h1>
             <h2 className="mt-4 leading-6"> Made with&nbsp;
@@ -65,6 +68,7 @@ export default function Projects() {
 
             <Link href="#" className="flex mt-2 w-max mx-auto border rounded p-4 hover:text-xl cursor-not-allowed">Info &rarr;</Link>
           </div>
+
         </div>
       </main>
     </>
