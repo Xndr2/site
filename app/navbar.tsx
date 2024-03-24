@@ -3,7 +3,7 @@ import Image from 'next/image'
 import HamburgerMenu from './hamburgerMenu'
 
 interface NabvarProps {
-    pageName?: string;
+    pageName: string;
 }
 
 export default function Navbar({
