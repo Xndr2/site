@@ -18,7 +18,7 @@ export default function Home() {
 
     let slides = [
         { src: "/abandoned_pfp/xndr.webp", name: "Xndr", description: "Project Lead | Senior Developer" },
-        { src: "/abandoned_pfp/charlesfrost.webp", name: "Charlesfrost", description: "Community Manager | Senior Moderator" },
+        { src: "/abandoned_pfp/charlesfrost.webp", name: "CharlesFrxst", description: "Community Manager | Senior Moderator" },
         { src: "/abandoned_pfp/gadubadish.webp", name: "Gadubadish", description: "3D Modeler | Senior Developer" },
         { src: "/abandoned_pfp/grug.webp", name: "Grug", description: "Project Lead | Moderator" },
         { src: "/abandoned_pfp/theusi.webp", name: "TheUsi", description: "3D Modeler | Developer" },
