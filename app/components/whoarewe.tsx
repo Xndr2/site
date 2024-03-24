@@ -21,12 +21,12 @@ export default function Whoarewe(props: CarouselProps) {
                         src={s.src}
                         width={128}
                         height={128}
-                        className="h-10 w-10 md:h-12 md:w-12 !rounded-full object-cover m-2"
+                        className="h-8 w-8 md:h-12 md:w-12 !rounded-full object-cover m-2"
                         alt="unknown"
                     />
-                    <div className="font-medium dark:text-white ml-2 mr-4">
-                        <div>{s.name}</div>
-                        <div className="text-sm text-gray-500 dark:text-gray-400">{s.description}</div>
+                    <div className="font-medium dark:text-white ml-2 mr-4 text-xs md:text-sm">
+                        <div className="">{s.name}</div>
+                        <div className=" text-gray-500 dark:text-gray-400">{s.description}</div>
                     </div>
                 </div>
             ))}
