@@ -20,7 +20,7 @@ export default function Home() {
         pageName="Home"
       />
       <Particles
-        className="absolute inset-0 -z-10"
+        className="fixed h-screen inset-0 -z-10"
         quantity={200}
       />
       <main className="max-w-screen-xl text-center mx-auto h-full animate-title">

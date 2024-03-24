@@ -32,7 +32,7 @@ export default function Home() {
                 pageName="Abandoned"
             />
             <Particles
-                className="absolute inset-0 -z-10"
+                className="fixed h-screen inset-0 -z-10"
                 quantity={200}
             />
             <main className=" max-w-screen-lg mx-auto animate-title">

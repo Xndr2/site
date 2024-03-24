@@ -20,8 +20,8 @@ export default function Contact() {
                 pageName='Contact'
             />
             <Particles
-                className="absolute inset-0 -z-10"
-                quantity={100}
+                className="fixed h-screen inset-0 -z-10"
+                quantity={200}
             />
             <main className="max-w-screen-xl text-center mx-auto h-full animate-title">
                 <div className="text-lg md:text-xl pt-20 md:pt-40 px-4">

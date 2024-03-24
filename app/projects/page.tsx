@@ -20,8 +20,8 @@ export default function Projects() {
         pageName='Projects'
       />
       <Particles
-        className="absolute inset-0 -z-10"
-        quantity={100}
+        className="fixed h-screen inset-0 -z-10"
+        quantity={200}
       />
       <main className="max-w-screen-xl text-center mx-auto animate-title mt-4 md:mt-10 md:overflow-hidden h-128 md:h-96">
         <div className="container m-auto w-3/4 md:w-full grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
