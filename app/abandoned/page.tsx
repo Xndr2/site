@@ -49,12 +49,12 @@ export default function Home() {
                         <br /><br /><span className="font-semibold text-xl">&#8227; Explore</span><br />
                         Build on Unreal Engine 5, Abandoned allows for a planet on a 1:1 scale that is fully explore-able. Explore the city or go outside city walls, who knows what you might find out there.
                         <br /><br /><span className="font-semibold text-xl">&#8227; Fight</span><br />
-                        The city&apos;s military in all out war with a group of terrorists that want to take over the city. Complete your basic training and join an AI squad on a mission.
+                        The city&apos;s military is in all out war with a group of terrorists that want to take over the city. Complete your basic training and join an AI squad on a mission.
                         Carefully plan out your next move, be stealthy, or go in guns-blazing.
                         <br />The choice is up to you.
                         <br /><br /><span className="font-semibold text-xl">&#8227; Escape</span><br />
                         At the end of the day, your main objective is still trying to get off this planet and going back to earth to report what happened to your crew... what actually happened to your crew?
-                        Try to remember the event that went down before coming to this planet alone and leave once you remember everything you need. But is everything you need to know really everything there&apos;s to it?
+                        Try to remember the events that went down before coming to this planet alone and leave once you remember everything you need. But is everything you need to know really everything there&apos;s to know?
                         <br />Can you really trust everyone you know?
                         <br />Maybe all this isn&apos;t what it looks like...
                     </p>
@@ -63,7 +63,7 @@ export default function Home() {
                 {/* about us */}
                 <div className="mt-16 mx-4">
                     <h1 className="text-2xl font-bold underline">Who are we?</h1>
-                    <p className="my-2 text-base">We are a Headshot Interactive, a small indie development studio. We stand to deliver a unique and unforgettable gaming experience that defies the constraints often associated with smaller development teams.
+                    <p className="my-2 text-base">We are Headshot Interactive, a small indie development studio. We stand to deliver a unique and unforgettable gaming experience that defies the constraints often associated with smaller development teams.
                         The passion and dedication of the developers makes this game a remarkable showcase of that can be achieved by a small group of people.
                     </p>
                     <Image
