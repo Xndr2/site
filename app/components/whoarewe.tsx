@@ -36,7 +36,7 @@ export default function Whoarewe(props: CarouselProps) {
                     src="/icons/discord.svg"
                     width={64}
                     height={64}
-                    className="h-8 w-10 md:h-10 md:w-12 !rounded-full object-cover m-2 invert"
+                    className="h-6 w-8 md:h-10 md:w-12 !rounded-full object-cover m-2 invert"
                     alt="unknown"
                 />
                 <div className="font-medium dark:text-white ml-2 mr-4 text-xs md:text-sm">
