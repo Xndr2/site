@@ -28,13 +28,10 @@ export default function Home() {
           <h1 className="text-3xl mb-4">Hi, I&apos;m <p className="text-blue-500 inline">Xander</p>.</h1>
           <h2>A self taught developer from <p className="text-blue-500 inline">Belgium</p>. I create applications or systems for people online.</h2>
           <h3 className="text-zinc-500 text-base">
-            Currently working on{" "}
-            <Link
-              href="abandoned"
-              className="underline duration-500 hover:text-zinc-300"
-            >
-              Abandoned
-            </Link>. A Sci-Fi tactical shooter game in Unreal Engine.
+            Project Lead @ {" "}
+            <a href="https://www.headshotinteractive.com/" className="underline duration-500 hover:text-zinc-300">
+              Headshot Interactive
+            </a> working on <Link href="abandoned" className="underline duration-500 hover:text-zinc-300">Abandoned</Link>
           </h3>
         </div>
       </main>
