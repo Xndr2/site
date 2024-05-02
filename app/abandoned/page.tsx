@@ -23,7 +23,6 @@ export default function Home() {
         { src: "/abandoned_pfp/grug.webp", name: "Grug", description: "Trial Graphics Developer | Moderator" },
         { src: "/abandoned_pfp/theusi.webp", name: "TheUsi", description: "3D Modeler | Developer" },
         { src: "/abandoned_pfp/milton.webp", name: "Milton", description: "Story Writer | Trial Developer" },
-        { src: "/abandoned_pfp/discountcheese.webp", name: "Discount_Cheese", description: "Story Writer | Trial Developer" },
     ];
 
     return (
