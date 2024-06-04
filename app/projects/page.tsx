@@ -80,7 +80,7 @@ export default function Projects() {
       <main className="max-w-screen-xl text-center mx-auto animate-title mt-4 md:mt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           {projects.map((project) => (
-            <div className=" bg-black p-5 mx-5 md:mx-0 rounded-lg border border-solid  border-[#808080] duration-500 hover:-translate-y-4 hover:border-blue-500">
+            <div key={project.name} className="bg-black p-5 mx-5 md:mx-0 rounded-lg border border-solid  border-[#808080] duration-500 hover:-translate-y-4 hover:border-blue-500">
               <Link href={project.link} target={project.target}>
                 <Image
                   className="w-auto max-h-64 mx-auto"
