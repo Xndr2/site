@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   icons: 'icons/XndrPFP.png',
 }
 
-import AbandonedImg from "@/public/projects/abandoned/Thumbnail.jpg"
+import AbandonedImg from "@/public/projects/abandoned/library_header_en.png"
 import HeadshotInteractiveImg from "@/public/projects/HeadshotInteractive/Thumbnail.png"
 import XndrSiteImg from "@/public/projects/xndr.site/Thumbnail.png"
 import JitseMoermanBeImg from "@/public/projects/jitsemoerman.be/Thumbnail.png"
@@ -25,10 +25,10 @@ export default function Projects() {
   let projects = [
     {
       img: AbandonedImg,
-      name: "Abandoned: Prologue",
-      description: "Part 1 in the Abandoned video game series. Abandoned is a Sci-Fi tactical PvE shooter.",
-      link: "/abandoned",
-      target: "_self"
+      name: "Abandoned",
+      description: "Abandoned is a psychological thriller set in a universe created by Headshot Interactive.",
+      link: "https://headshotinteractive.com/#Abandoned",
+      target: "_black"
     },
     {
       img: HeadshotInteractiveImg,
