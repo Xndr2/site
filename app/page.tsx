@@ -32,10 +32,10 @@ export default function Home() {
             Project Lead @ {" "}
             <a href="https://www.headshotinteractive.com/" className="underline underline-offset-4 duration-500 hover:text-zinc-300">
               Headshot Interactive
-            </a> working on <Link href="abandoned" className="underline underline-offset-4 duration-500 hover:text-zinc-300">Abandoned</Link>
+            </a> working on <a href="https://www.headshotinteractive.com/#Abandoned" className="underline underline-offset-4 duration-500 hover:text-zinc-300">Abandoned</a>
           </h2>
           <h3 className="text-zinc-400 text-base">
-            For any business related stuff you can quickly reach me by emailing to <Link className="underline underline-offset-4 text-blue-500" href="mailto:moermanxander@onmail.com">business@xndr.site</Link>
+            For any business related questions, you can quickly contact me by emailing to <Link className="underline underline-offset-4 text-blue-500" href="mailto:moermanxander@onmail.com">business@xndr.site</Link>
           </h3>
         </div>
       </main>
