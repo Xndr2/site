@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   icons: 'icons/XndrPFP.png',
 }
 
-import AbandonedImg from "@/public/projects/abandoned/library_header_en.png"
+import AbandonedImg from "@/public/projects/abandoned/EN_Header_Capsule.png"
 import HeadshotInteractiveImg from "@/public/projects/HeadshotInteractive/Thumbnail.png"
 import XndrSiteImg from "@/public/projects/xndr.site/Thumbnail.png"
 import JitseMoermanBeImg from "@/public/projects/jitsemoerman.be/Thumbnail.png"
@@ -33,8 +33,22 @@ export default function Projects() {
     {
       img: HeadshotInteractiveImg,
       name: "Headshot Interactive",
-      description: "I've made my own game studio. Our group is responsible for developing Abandoned and Abandoned: Prologue.",
+      description: "I started my own game studio dedicated to developing Abandoned.",
       link: "https://headshotinteractive.com",
+      target: "_black"
+    },
+    {
+      img: null,
+      name: "Game Dev Wiki",
+      description: "A wiki dedicated to helping beginners get started with game development.",
+      link: "https://github.com/Xndr2/GameDevWiki",
+      target: "_black"
+    },
+    {
+      img: null,
+      name: "Discord Bot",
+      description: "Discord bot made with DiscordJS v14. Written in JavaScript.",
+      link: "https://github.com/Xndr2/Abandoned-Bot",
       target: "_black"
     },
     {
@@ -52,17 +66,10 @@ export default function Projects() {
       target: "_black"
     },
     {
-      img: RendererImg,
+      img: null,
       name: "Graphics Renderer",
       description: "An OpenGL renderer using GLFW and Glad. Work in progress",
       link: "https://github.com/Xndr2/Graphics_Renderer",
-      target: "_black"
-    },
-    {
-      img: DiscordBotImg,
-      name: "Discord Bot",
-      description: "Discord bot made with DiscordJS v14. Written in JavaScript.",
-      link: "https://github.com/Xndr2/Abandoned-Bot",
       target: "_black"
     },
   ]
@@ -70,29 +77,30 @@ export default function Projects() {
 
   return (
     <>
-      <Navbar
-        pageName='Projects'
-      />
-      <Particles
-        className="fixed h-screen inset-0 -z-10"
-        quantity={200}
-      />
-      <main className="max-w-screen-xl text-center mx-auto animate-title mt-4 md:mt-10">
+      <Navbar pageName='Projects' />
+      <Particles className="fixed h-screen inset-0 -z-10" quantity={200} />
+      <main className="max-w-screen-xl text-center xl:mx-auto mx-8 animate-title mt-4 md:mt-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
           {projects.map((project) => (
-            <div key={project.name} className="bg-black p-5 mx-5 md:mx-0 rounded-lg border border-solid  border-[#808080] duration-500 hover:-translate-y-4 hover:border-blue-500">
+            <div key={project.name} className="bg-transparent p-5 mx-5 md:mx-0 rounded-lg border border-solid border-[#808080] duration-500 hover:-translate-y-4 hover:border-blue-500">
               <Link href={project.link} target={project.target}>
-                <Image
-                  className="w-auto max-h-64 mx-auto"
-                  src={project.img.src}
-                  width={project.img.width}
-                  height={project.img.height}
-                  alt={project.name} />
-                <h1 className="mt-4 text-xl font-medium underline underline-offset-2">{project.name}</h1>
+                {/* Only render the image if it exists */}
+                {project.img ? (
+                  <Image
+                    className="w-auto max-h-64 mx-auto mb-4 rounded-lg border border-solid border-[#808080]"
+                    src={project.img.src}
+                    width={project.img.width}
+                    height={project.img.height}
+                    alt={project.name} 
+                  />
+                ) : (
+                  <div className='hidden'></div>
+                )}
+                <h1 className="text-xl font-medium underline underline-offset-2">{project.name}</h1>
                 <h1 className="mt-2 text-md">{project.description}</h1>
               </Link>
             </div>
-          ))};
+          ))}
         </div>
       </main>
     </>

@@ -27,7 +27,7 @@ export default function Contact() {
                 <div className="text-lg md:text-xl pt-20 md:pt-40 px-4">
                     <h1 className="text-xl md:text-3xl mb-4">Contact Me</h1>
                     <h2 className="text-gray-500 dark:text-gray-400 sm:text-xl">
-                        Got a technical issue? Want to send feedback about a feature? Need details about a project?
+                        Got a technical issue?<br />Want to send feedback about a feature?<br />Need details about a project?
                         <br />
                         You can find me here:
                     </h2>
