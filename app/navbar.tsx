@@ -31,6 +31,10 @@ export default function Navbar({
                             </li>
                             <div className="md:hidden w-full h-px border my-2"></div>
                             <li>
+                                <a href="about-me" className="block py-2 px-3 text-gray-900 rounded 00 md:p-0 dark:text-white md:hover:underline">About Me</a>
+                            </li>
+                            <div className="md:hidden w-full h-px border my-2"></div>
+                            <li>
                                 <a href="projects" className="block py-2 px-3 text-gray-900 rounded 00 md:p-0 dark:text-white md:hover:underline">Projects</a>
                             </li>
                             <div className="md:hidden w-full h-px border my-2"></div>

@@ -77,32 +77,42 @@ export default function Projects() {
 
   return (
     <>
+    <div className="min-h-screen bg-gradient-to-b text-gray-100 animate-fade-in">
       <Navbar pageName='Projects' />
       <Particles className="fixed h-screen inset-0 -z-10" quantity={200} />
-      <main className="max-w-screen-xl text-center xl:mx-auto mx-8 animate-title mt-4 md:mt-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-          {projects.map((project) => (
-            <div key={project.name} className="bg-transparent p-5 mx-5 md:mx-0 rounded-lg border border-solid border-[#808080] duration-500 hover:-translate-y-4 hover:border-blue-500">
-              <Link href={project.link} target={project.target}>
-                {/* Only render the image if it exists */}
-                {project.img ? (
-                  <Image
-                    className="w-auto max-h-64 mx-auto mb-4 rounded-lg border border-solid border-[#808080]"
-                    src={project.img.src}
-                    width={project.img.width}
-                    height={project.img.height}
-                    alt={project.name} 
-                  />
-                ) : (
-                  <div className='hidden'></div>
-                )}
-                <h1 className="text-xl font-medium underline underline-offset-2">{project.name}</h1>
-                <h1 className="mt-2 text-md">{project.description}</h1>
-              </Link>
-            </div>
-          ))}
+
+      <main className="max-w-screen-lg mx-auto p-6 pt-24 md:pt-32">
+        <div className="flex flex-col items-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r text-white bg-clip-text text-transparent">
+            Projects
+          </h1>
+          <div className="w-16 h-1 bg-blue-500 my-6 mx-auto"></div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            {projects.map((project) => (
+              <div key={project.name} className="bg-transparent p-5 mx-5 md:mx-0 rounded-lg border border-solid border-[#808080] duration-500 hover:-translate-y-4 hover:border-blue-500">
+                <Link href={project.link} target={project.target}>
+                  {/* Only render the image if it exists */}
+                  {project.img ? (
+                    <Image
+                      className="w-auto max-h-64 mx-auto mb-4 rounded-lg border border-solid border-[#808080]"
+                      src={project.img.src}
+                      width={project.img.width}
+                      height={project.img.height}
+                      alt={project.name} 
+                    />
+                  ) : (
+                    <div className='hidden'></div>
+                  )}
+                  <h1 className="text-xl font-medium underline underline-offset-2">{project.name}</h1>
+                  <h1 className="mt-2 text-md">{project.description}</h1>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
+    </div>
     </>
   )
 }
