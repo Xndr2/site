@@ -20,7 +20,7 @@ const TechStack: React.FC = () => {
               alt={tech.name}
               width={50}
               height={50}
-              className="transition-transform transform group-hover:scale-110"
+              className="md:h-10 h-5 w-auto transition-transform transform group-hover:scale-110"
             />
             <span className="absolute bottom-[-1.5rem] text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
               {tech.name}
