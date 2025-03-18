@@ -48,7 +48,7 @@ export default function ProgressBar({ level, maxLevel = 5, showLabel = true }: P
       </div>
       <div className="w-full bg-gray-700 rounded-full h-1.5" ref={progressRef}>
         <div 
-          className="bg-blue-500 h-1.5 rounded-full transition-all duration-1000 ease-out"
+          className="bg-gradient-to-r from-blue-500 to-blue-700 h-1.5 rounded-full transition-all duration-1000 ease-out"
           style={{ width: `${width}%` }}
         ></div>
       </div>
