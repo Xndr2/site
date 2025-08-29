@@ -1,33 +1,38 @@
 'use client'
 
 import React, { useState } from 'react';
-import Head from 'next/head'
 import Image from 'next/image'
 
-export default function HamburgerMenu(e: any) {
-    var isOpen = false;
+export default function HamburgerMenu() {
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleNavbar = () => {
-        var str = "w-full md:block md:w-auto NavbarClass"; // MUST BE THE SAME AS IN NAVBAR
+        const str = "w-full md:block md:w-auto NavbarClass"; // MUST BE THE SAME AS IN NAVBAR
         const div = document.getElementsByClassName("NavbarClass")[0];
+        if (!div) return;
+        
         if(isOpen) {
             div.setAttribute("class", "hidden " + str);
-            isOpen = false;
+            setIsOpen(false);
         } else {
             div.setAttribute("class", "visible " + str);
-            isOpen = true;
+            setIsOpen(true);
         }
     };
 
     return (
-        <button onClick={toggleNavbar} className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-            <Image
-                src="/icons/bars-solid.svg"
-                width={40}
-                height={40}
-                className="h-10 invert-0 dark:invert"
-                alt="Menu"
-            />
+        <button onClick={toggleNavbar} className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-500 border border-gray-300 dark:border-gray-600">
+            {isOpen ? (
+                // Cross icon when menu is open
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            ) : (
+                // Hamburger icon when menu is closed
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            )}
         </button>
     )
 }

@@ -1,12 +1,9 @@
-import { url } from 'inspector'
-import type { Metadata } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Footer() {
     return (
-        <footer className="w-max bg-blue-600 ">
+        <footer className="w-max bg-blue-500">
             <div className="text-black">
                 <Link target="_blank" href="https://discord.com">
                     <Image

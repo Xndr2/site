@@ -1,4 +1,3 @@
-import { url } from 'inspector'
 import type { Metadata } from 'next'
 import Navbar from './navbar'
 import Particles from "./components/particles";
@@ -27,9 +26,9 @@ export default function Home() {
             A self taught developer from <p className="text-blue-500 inline">Belgium</p>.
             <br />
             Project Lead @ {" "}
-            <a href="https://www.headshotinteractive.com/" className="underline underline-offset-4 duration-500 hover:text-zinc-300" target='_blank'>
+            <a href="https://www.headshotinteractive.com/" className="underline underline-offset-4 duration-500 hover:text-blue-400" target='_blank'>
               Headshot Interactive
-            </a> working on <a href="https://www.headshotinteractive.com/abandoned" className="underline underline-offset-4 duration-500 hover:text-zinc-300" target='_blank'>Abandoned</a>
+            </a> working on <a href="https://www.headshotinteractive.com/abandoned" className="underline underline-offset-4 duration-500 hover:text-blue-400" target='_blank'>Abandoned</a>
           </h2>
           <TechStack/>
         </div>

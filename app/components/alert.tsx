@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 export default function Alert() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible] = useState(true);
 
   if (!isVisible) return null;
 

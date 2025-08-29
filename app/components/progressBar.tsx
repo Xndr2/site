@@ -5,10 +5,9 @@ import { useEffect, useRef, useState } from 'react';
 interface ProgressBarProps {
   level: number;
   maxLevel?: number;
-  showLabel?: boolean;
 }
 
-export default function ProgressBar({ level, maxLevel = 5, showLabel = true }: ProgressBarProps) {
+export default function ProgressBar({ level, maxLevel = 5 }: ProgressBarProps) {
   const [width, setWidth] = useState(0);
   const progressRef = useRef<HTMLDivElement>(null);
   

@@ -31,7 +31,7 @@ export default function Whoarewe(props: CarouselProps) {
                 </div>
             ))}
             {/* button to join */}
-            <Link target='_blank' href="https://discord.gg/CAhVGsAW7H" className="flex items-center border-2 rounded-lg">
+            <Link target='_blank' href="https://discord.gg/CAhVGsAW7H" className="flex items-center border-2 border-gray-300 dark:border-gray-600 rounded-lg hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200">
                 <Image
                     src="/icons/discord.svg"
                     width={64}

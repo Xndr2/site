@@ -1,9 +1,6 @@
-import { url } from 'inspector'
 import type { Metadata } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import Navbar from '../navbar'
-import Footer from '../footer'
 import Link from 'next/link'
 import Particles from '../components/particles'
 
@@ -17,12 +14,10 @@ import AbandonedImg from "@/public/projects/abandoned/EN_Header_Capsule.png"
 import HeadshotInteractiveImg from "@/public/projects/HeadshotInteractive/Thumbnail.png"
 import XndrSiteImg from "@/public/projects/xndr.site/Thumbnail.png"
 import JitseMoermanBeImg from "@/public/projects/jitsemoerman.be/Thumbnail.png"
-import RendererImg from "@/public/projects/renderer/Thumbnail.png"
-import DiscordBotImg from "@/public/projects/DiscordBot/Thumbnail.png"
 
 export default function Projects() {
 
-  let projects = [
+  const projects = [
     {
       img: AbandonedImg,
       name: "Abandoned",
