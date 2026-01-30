@@ -1,49 +1,70 @@
-import Image from 'next/image'
-import HamburgerMenu from './hamburgerMenu'
+'use client';
 
-interface NabvarProps {
-    pageName: string;
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import HamburgerMenu from './hamburgerMenu';
+
+interface NavbarProps {
+  pageName: string;
 }
 
-export default function Navbar({
-    pageName = "",
-}: NabvarProps) {
-    return (
-        <>
-            <nav>
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <Image
-                            src="/icons/XndrPFP.png"
-                            width={40}
-                            height={40}
-                            className="h-10"
-                            alt="Xndr Logo"
-                        />
-                        <span className="self-center text-lg md:text-2xl whitespace-nowrap dark:text-white">Xndr | {pageName}</span>
-                    </a>
-                    <HamburgerMenu />
-                    <div className="hidden w-full md:block md:w-auto NavbarClass" id="navbar-default">
-                        <ul className="text-center font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-transparent">
-                            <li>
-                                <a href="/" className="block py-2 px-3 text-white rounded 00 md:p-0 dark:text-white md:hover:underline hover:text-blue-400 dark:hover:text-blue-300" aria-current="page">Home</a>
-                            </li>
-                            <div className="md:hidden w-full h-px border my-2"></div>
-                            <li>
-                                <a href="about-me" className="block py-2 px-3 text-white rounded 00 md:p-0 dark:text-white md:hover:underline hover:text-blue-400 dark:hover:text-blue-300">About Me</a>
-                            </li>
-                            <div className="md:hidden w-full h-px border my-2"></div>
-                            <li>
-                                <a href="projects" className="block py-2 px-3 text-white rounded 00 md:p-0 dark:text-white md:hover:underline hover:text-blue-400 dark:hover:text-blue-300">Projects</a>
-                            </li>
-                            <div className="md:hidden w-full h-px border my-2"></div>
-                            <li>
-                                <a href="contact" className="block py-2 px-3 text-white rounded 00 md:p-0 dark:text-white md:hover:underline hover:text-blue-400 dark:hover:text-blue-300">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </>
-    )
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/about-me', label: 'About Me' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
+];
+
+export default function Navbar({ pageName = '' }: NavbarProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#fafbfc]/90 backdrop-blur-md border-b border-slate-200/50">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-6 py-3">
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative w-12 h-12 flex-shrink-0 overflow-hidden rounded-full">
+            <Image
+              src="/icons/XndrPFP_cat.png"
+              fill
+              sizes="128px"
+              className="object-cover object-top"
+              alt="Xndr Logo"
+              priority
+            />
+          </div>
+          <span className="text-lg font-semibold text-slate-800">
+            Xndr
+            <span className=" font-normal text-xs">.site</span>
+            <span className="text-slate-400 font-normal"> / {pageName}</span>
+          </span>
+        </Link>
+
+        <HamburgerMenu isOpen={isMenuOpen} onToggle={toggleMenu} />
+
+        <div
+          className={`${
+            isMenuOpen ? 'block' : 'hidden'
+          } w-full md:block md:w-auto`}
+        >
+          <ul className="text-center flex flex-col p-4 md:p-0 mt-4 bg-white rounded-xl md:flex-row md:gap-1 md:mt-0 md:bg-transparent shadow-lg md:shadow-none border border-slate-100 md:border-0">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="block py-2 px-4 text-slate-600 rounded-lg md:rounded-full hover:text-cat-pink hover:bg-cat-pink/5 transition-all text-sm font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 }
