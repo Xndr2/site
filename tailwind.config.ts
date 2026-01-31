@@ -8,9 +8,22 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './util/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
+  // Light mode only
   theme: {
     extend: {
+      colors: {
+        // Custom palette - more vibrant for white backgrounds
+        'cat': {
+          'sky': '#4da6db',
+          'sky-light': '#7ec4eb',
+          'sky-dark': '#2d8bc4',
+          'pink': '#e85a7b',
+          'pink-light': '#f08da3',
+          'pink-dark': '#d1406a',
+          'white': '#ffffff',
+          'cream': '#fafbfc',
+        },
+      },
       typography: {
         DEFAULT: {
           css: {
@@ -46,10 +59,10 @@ const config: Config = {
         'button-hover': 'calc(max-content+10px)'
       },
       animation: {
-        "fade-in": "fade-in 2s ease-in-out forwards",
-        title: "title 1s ease-out forwards",
-        "fade-left": "fade-left 3s ease-in-out forwards",
-        "fade-right": "fade-right 3s ease-in-out forwards",
+        "fade-in": "fade-in 0.3s ease-out forwards",
+        title: "title 0.4s ease-out forwards",
+        "fade-left": "fade-left 0.8s ease-in-out forwards",
+        "fade-right": "fade-right 0.8s ease-in-out forwards",
       },
       keyframes: {
         "fade-in": {

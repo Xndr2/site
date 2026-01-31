@@ -10,46 +10,39 @@ interface ProgressBarProps {
 export default function ProgressBar({ level, maxLevel = 5 }: ProgressBarProps) {
   const [width, setWidth] = useState(0);
   const progressRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
+    const element = progressRef.current;
+    if (!element) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Animate the width when the bar comes into view
             setTimeout(() => {
               setWidth((level / maxLevel) * 100);
             }, 100);
-            // Unobserve after animation starts
-            if (progressRef.current) {
-              observer.unobserve(progressRef.current);
-            }
+            observer.unobserve(element);
           }
         });
       },
       { threshold: 0.1 }
     );
 
-    if (progressRef.current) {
-      observer.observe(progressRef.current);
-    }
+    observer.observe(element);
 
     return () => {
-      if (progressRef.current) {
-        observer.unobserve(progressRef.current);
-      }
+      observer.unobserve(element);
     };
   }, [level, maxLevel]);
 
   return (
-    <div className="w-full">
-      <div className="flex justify-between items-center mb-1">
-      </div>
-      <div className="w-full bg-gray-700 rounded-full h-1.5" ref={progressRef}>
+    <div className="w-full" ref={progressRef}>
+      <div className="w-full bg-slate-200 rounded-full h-1">
         <div 
-          className="bg-gradient-to-r from-blue-500 to-blue-700 h-1.5 rounded-full transition-all duration-1000 ease-out"
+          className="bg-cat-sky h-1 rounded-full transition-all duration-1000 ease-out"
           style={{ width: `${width}%` }}
-        ></div>
+        />
       </div>
     </div>
   );

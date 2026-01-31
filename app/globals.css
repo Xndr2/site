@@ -3,20 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 10, 10, 10;
-  }
+  --foreground: #1e293b;
+  --background: #fafbfc;
+  --cat-sky: #4da6db;
+  --cat-pink: #e85a7b;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-end-rgb))
+  color: var(--foreground);
+  background: var(--background);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cat-pink);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(77, 166, 219, 0.2);
+}
+
+/* Smooth focus outlines */
+*:focus-visible {
+  outline: 2px solid var(--cat-sky);
+  outline-offset: 2px;
 }
