@@ -1,0 +1,73 @@
+---
+title: "I Built a Stats Dashboard Inside Spotify"
+date: "2026-02-15"
+description: "A custom Spicetify app that gives you a full listening statistics dashboard right inside your Spotify client. Multiple data providers, share cards, streak tracking, and more."
+tags: ["project", "spicetify", "spotify", "typescript", "react"]
+published: true
+---
+
+### Hi, yall!
+
+Spotify Wrapped is cool and all, but it happens once a year. What about the other 364 days? I wanted to see my listening stats whenever I felt like it, not when Spotify decided to show them to me. So I built **Listening Stats**, a custom app that lives right inside your Spotify client.
+
+## What It Actually Does
+
+Once you install it, a new page shows up in your Spotify sidebar. Click it and you get a full dashboard with all the stuff you'd actually want to know about your listening habits.
+
+Your top tracks, top artists, top albums, all with real play counts and listening time. There's an activity chart that shows what hours of the day you listen the most. You get streak tracking for consecutive listening days, skip rate percentages, and even an estimate of how much you've contributed to artists through payouts.
+
+## Pick Your Data Source
+
+This was one of the trickier parts to figure out. Spotify's API is surprisingly limited when it comes to personal play counts. Their recently played endpoint only gives you the last 50 tracks. That's it.
+
+So instead of being locked into one mediocre data source, I built a provider system. You pick how you want your data tracked:
+
+- **stats.fm** is the recommended option. Just plug in your username and you're good to go. Accurate play counts, listening duration, genres, the works.
+- **Last.fm** is great if you already scrobble. It pulls from their API and enriches everything with Spotify artwork and URIs.
+- **Local tracking** stores everything on your device using IndexedDB. No accounts, no external services, completely private.
+
+You choose on first launch and can switch anytime through settings.
+
+## Share Your Stats
+
+One of my favorite features is share cards. You can generate a clean image of your stats in either story or landscape format. It pulls album art, blurs it into the background, applies your accent color, and lays out your top tracks and artists. Copy it to clipboard or download it. Way better than screenshotting your Wrapped.
+
+## The Nerdy Details
+
+The app is written in **TypeScript** with **React** for the UI. Spicetify exposes React as a global, so instead of bundling my own copy I just hook into the one Spotify already has loaded. That keeps the bundle size down and avoids version conflicts.
+
+**esbuild** handles the build step and it produces two separate bundles. The first is the background extension (`listening-stats.js` at around 62kb) which runs silently and handles things like tracking what you're currently playing, detecting skips, and polling for data. The second is the custom app bundle (`index.js` at around 222kb) which is the actual dashboard UI you see when you click the sidebar entry. Both are wrapped in IIFE format (Immediately Invoked Function Expression), which basically means the code runs in its own scope and doesn't leak variables into the global namespace. The tradeoff is that IIFEs don't support code splitting, so everything gets inlined into one file per bundle.
+
+For **local tracking**, the app uses IndexedDB through a library called `idb`. IndexedDB is a browser database built into every modern browser (and Spotify's client is basically a browser under the hood). It lets me store structured listening data on your machine without needing a server. Every track you listen to gets written there with timestamps, and the stats engine queries it later to calculate your totals.
+
+The **provider system** is built around a simple interface called `TrackingProvider`. Each provider implements the same methods (`init()`, `destroy()`, `calculateStats()`) but gets its data from a different source. There's a registry that keeps track of which provider is active, and the stats service just delegates to whatever provider you picked. This made it straightforward to add new providers without rewriting the stats logic every time.
+
+Stats get **cached for 5 minutes** with a key based on provider and time period, so switching between tabs doesn't hammer the API on every click. The cache clears automatically when you refresh or switch providers.
+
+One fun challenge was **share cards**. Generating images in a browser context means using a Canvas element. The app draws album art, applies a gaussian blur for the background, overlays your accent color, and composites your stats on top. You can copy the result straight to your clipboard or save it as a file.
+
+## Installing It
+
+You need [Spicetify](https://spicetify.app/) installed first. After that it's one command:
+
+**Linux / macOS:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/Xndr2/listening-stats/main/install.sh | bash
+```
+
+**Windows (PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/Xndr2/listening-stats/main/install.ps1 | iex
+```
+
+It handles everything automatically and the app even notifies you when updates are available.
+
+## Why I Made This
+
+Honestly I just wanted to see my play counts without waiting for December. It started as a simple tracker and snowballed into a full dashboard with 15+ features across multiple data providers. The whole thing is open source under MIT, so if you want to poke around or contribute, the repo is on [GitHub](https://github.com/Xndr2/listening-stats).
+
+## What's Next
+
+Life has required my attention again so i wont be updating this anymore, apart from security and bug fixes. Smaller updates and bug fixes will still be released on the [GitHub releases](https://github.com/Xndr2/listening-stats/releases) page, and automatically downloaded.
+
+All the love ❤️ - Xander
