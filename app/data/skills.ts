@@ -23,7 +23,11 @@ export const skillCategories: SkillCategory[] = [
       { name: 'JavaScript', src: '/icons/javascript.svg', level: 3 },
       { name: 'LUA', src: '/icons/lua-language.svg', level: 2.5 },
       { name: 'C', src: '/icons/c.svg', level: 2 },
-      { name: 'HLSL/Shader Programming', src: '/icons/unreal-engine.svg', level: 2 },
+      {
+        name: 'HLSL/Shader Programming',
+        src: '/icons/unreal-engine.svg',
+        level: 2,
+      },
     ],
   },
   {

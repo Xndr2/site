@@ -43,64 +43,56 @@ const PINNED_REPOS: string[] = [
 ];
 
 export async function fetchGitHubRepos(): Promise<ProcessedRepo[]> {
-  try {
-    const response = await fetch(
-      `${GITHUB_API_BASE}/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`,
-      {
-        headers: {
-          Accept: 'application/vnd.github.v3+json',
-        },
-        next: {
-          revalidate: 86400, // Revalidate every 24 hours
-        },
-      }
-    );
-
-    if (!response.ok) {
-      console.error('GitHub API error:', response.status);
-      return [];
+  const response = await fetch(
+    `${GITHUB_API_BASE}/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`,
+    {
+      headers: {
+        Accept: 'application/vnd.github.v3+json',
+      },
+      next: {
+        revalidate: 300, // Revalidate every 5 minutes
+      },
     }
+  );
 
-    const repos: GitHubRepo[] = await response.json();
-
-    // Filter and process repos
-    const processedRepos = repos
-      .filter(
-        (repo) =>
-          !repo.fork &&
-          !repo.archived &&
-          !EXCLUDED_REPOS.includes(repo.name)
-      )
-      .map((repo) => ({
-        id: repo.id,
-        name: repo.name,
-        description: repo.description || 'No description available',
-        url: repo.html_url,
-        homepage: repo.homepage,
-        language: repo.language,
-        stars: repo.stargazers_count,
-        forks: repo.forks_count,
-        topics: repo.topics || [],
-        updatedAt: repo.updated_at,
-      }));
-
-    // Sort: pinned repos first, then by stars
-    return processedRepos.sort((a, b) => {
-      const aIndex = PINNED_REPOS.indexOf(a.name);
-      const bIndex = PINNED_REPOS.indexOf(b.name);
-
-      if (aIndex !== -1 && bIndex !== -1) {
-        return aIndex - bIndex;
-      }
-      if (aIndex !== -1) return -1;
-      if (bIndex !== -1) return 1;
-
-      return b.stars - a.stars;
-    });
-  } catch (error) {
-    console.error('Failed to fetch GitHub repos:', error);
-    return [];
+  if (!response.ok) {
+    throw new Error(`GitHub API returned ${response.status}`);
   }
+
+  const repos: GitHubRepo[] = await response.json();
+
+  // Filter and process repos
+  const processedRepos = repos
+    .filter(
+      repo =>
+        !repo.fork && !repo.archived && !EXCLUDED_REPOS.includes(repo.name)
+    )
+    .map(repo => ({
+      id: repo.id,
+      name: repo.name,
+      description: repo.description || 'No description available',
+      url: repo.html_url,
+      homepage: repo.homepage,
+      language: repo.language,
+      stars: repo.stargazers_count,
+      forks: repo.forks_count,
+      topics: repo.topics || [],
+      updatedAt: repo.updated_at,
+    }));
+
+  // Sort: pinned repos first, then by stars
+  return processedRepos.sort((a, b) => {
+    const aIndex = PINNED_REPOS.indexOf(a.name);
+    const bIndex = PINNED_REPOS.indexOf(b.name);
+
+    if (aIndex !== -1 && bIndex !== -1) {
+      return aIndex - bIndex;
+    }
+    if (aIndex !== -1) return -1;
+    if (bIndex !== -1) return 1;
+
+    return b.stars - a.stars;
+  });
 }
 
 // Language color mapping for visual display

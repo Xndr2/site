@@ -5,7 +5,8 @@ import TechStack from './components/tech-stack';
 
 export const metadata: Metadata = {
   title: 'Home',
-  description: 'Xander - Self-taught developer from Belgium specializing in game development and web applications.',
+  description:
+    'Xander - Self-taught developer from Belgium specializing in game development and web applications.',
 };
 
 export default function Home() {
@@ -18,13 +19,13 @@ export default function Home() {
         <div className="min-h-screen flex flex-col justify-center items-center text-center pt-16">
           {/* Main Title */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 mb-6 tracking-tight">
-            Hi, I&apos;m{' '}
-            <span className="text-cat-pink">Xander</span>
+            Hi, I&apos;m <span className="text-cat-pink">Xander</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-slate-500 max-w-xl mb-8 leading-relaxed">
-            A self-taught developer from <span className="text-cat-sky font-medium">Belgium</span>,
+            A self-taught developer from{' '}
+            <span className="text-cat-sky font-medium">Belgium</span>,
             passionate about creating things through code.
           </p>
 
@@ -49,7 +50,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="text-slate-600 hover:text-cat-pink transition-colors"
             >
-            Headshot Interactive
+              Headshot Interactive
             </a>
           </p>
 

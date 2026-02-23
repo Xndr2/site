@@ -29,20 +29,16 @@ function ensurePostsDir() {
 
 export function getAllPostSlugs(): string[] {
   ensurePostsDir();
-  
-  try {
-    const files = fs.readdirSync(POSTS_PATH);
-    return files
-      .filter((file) => file.endsWith('.mdx'))
-      .map((file) => file.replace(/\.mdx$/, ''));
-  } catch {
-    return [];
-  }
+
+  const files = fs.readdirSync(POSTS_PATH);
+  return files
+    .filter(file => file.endsWith('.mdx'))
+    .map(file => file.replace(/\.mdx$/, ''));
 }
 
 export function getPostBySlug(slug: string): BlogPost | null {
   ensurePostsDir();
-  
+
   const filePath = path.join(POSTS_PATH, `${slug}.mdx`);
 
   if (!fs.existsSync(filePath)) {
@@ -69,7 +65,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
 export function getAllPosts(): BlogPostMeta[] {
   const slugs = getAllPostSlugs();
   const posts = slugs
-    .map((slug) => getPostBySlug(slug))
+    .map(slug => getPostBySlug(slug))
     .filter((post): post is BlogPost => post !== null && post.published)
     .map(({ content, ...meta }) => meta)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -78,8 +74,8 @@ export function getAllPosts(): BlogPostMeta[] {
 }
 
 export function getPostsByTag(tag: string): BlogPostMeta[] {
-  return getAllPosts().filter((post) =>
-    post.tags.map((t) => t.toLowerCase()).includes(tag.toLowerCase())
+  return getAllPosts().filter(post =>
+    post.tags.map(t => t.toLowerCase()).includes(tag.toLowerCase())
   );
 }
 
@@ -87,8 +83,8 @@ export function getAllTags(): string[] {
   const posts = getAllPosts();
   const tags = new Set<string>();
 
-  posts.forEach((post) => {
-    post.tags.forEach((tag) => tags.add(tag.toLowerCase()));
+  posts.forEach(post => {
+    post.tags.forEach(tag => tags.add(tag.toLowerCase()));
   });
 
   return Array.from(tags).sort();

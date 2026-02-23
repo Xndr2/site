@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '../navbar';
 import { getAllPosts, getAllTags, formatDate } from '@/app/lib/blog';
+import { SubscribeForm } from './_components/subscribe-form';
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Articles about game development, web development, and programming.',
+  description:
+    'Articles about game development, web development, and programming.',
 };
 
 export default function BlogPage() {
@@ -30,7 +32,7 @@ export default function BlogPage() {
         {/* Tags */}
         {tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-10">
-            {tags.map((tag) => (
+            {tags.map(tag => (
               <span
                 key={tag}
                 className="px-3 py-1 text-sm bg-slate-100 text-slate-600 rounded-full hover:bg-cat-sky/10 hover:text-cat-sky transition-colors cursor-pointer"
@@ -48,7 +50,7 @@ export default function BlogPage() {
             <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-cat-sky via-cat-pink to-transparent" />
 
             <div className="space-y-6">
-              {posts.map((post) => (
+              {posts.map(post => (
                 <div key={post.slug} className="relative flex gap-6">
                   {/* Timeline dot */}
                   <div className="relative flex-shrink-0 z-10">
@@ -69,7 +71,9 @@ export default function BlogPage() {
                         {formatDate(post.date)}
                       </time>
                       <span className="text-slate-300">•</span>
-                      <span className="text-xs text-slate-400">{post.readingTime}</span>
+                      <span className="text-xs text-slate-400">
+                        {post.readingTime}
+                      </span>
                     </div>
 
                     {/* Title */}
@@ -84,7 +88,7 @@ export default function BlogPage() {
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2">
-                      {post.tags.slice(0, 3).map((tag) => (
+                      {post.tags.slice(0, 3).map(tag => (
                         <span
                           key={tag}
                           className="px-2 py-0.5 text-xs bg-slate-100 text-slate-500 rounded"
@@ -101,8 +105,18 @@ export default function BlogPage() {
         ) : (
           <div className="text-center py-16">
             <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-slate-100 flex items-center justify-center">
-              <svg className="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+              <svg
+                className="w-6 h-6 text-slate-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+                />
               </svg>
             </div>
             <p className="text-slate-600 mb-1">No posts yet</p>
@@ -111,6 +125,11 @@ export default function BlogPage() {
             </p>
           </div>
         )}
+
+        {/* Subscribe form */}
+        <div className="mt-16">
+          <SubscribeForm />
+        </div>
       </main>
     </div>
   );

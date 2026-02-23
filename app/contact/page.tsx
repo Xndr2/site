@@ -4,7 +4,8 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Get in touch with Xander for collaborations, questions, or just to say hi.',
+  description:
+    'Get in touch with Xander for collaborations, questions, or just to say hi.',
 };
 
 const socialLinks = [
@@ -66,7 +67,8 @@ export default function Contact() {
             Let&apos;s Connect
           </h1>
           <p className="text-slate-500 text-lg">
-            Have a question or want to collaborate? I&apos;d love to hear from you.
+            Have a question or want to collaborate? I&apos;d love to hear from
+            you.
           </p>
         </div>
 
@@ -78,12 +80,18 @@ export default function Contact() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="p-2.5 bg-cat-sky/10 rounded-lg">
-                <svg className="w-6 h-6 text-cat-sky" fill="currentColor" viewBox="0 0 512 512">
+                <svg
+                  className="w-6 h-6 text-cat-sky"
+                  fill="currentColor"
+                  viewBox="0 0 512 512"
+                >
                   <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
                 </svg>
               </div>
               <div>
-                <p className="text-xs text-slate-400 uppercase tracking-wide">Email</p>
+                <p className="text-xs text-slate-400 uppercase tracking-wide">
+                  Email
+                </p>
                 <p className="text-slate-800 font-medium group-hover:text-cat-pink transition-colors">
                   business@xndr.site
                 </p>
@@ -95,14 +103,19 @@ export default function Contact() {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
             </svg>
           </div>
         </Link>
 
         {/* Social Links */}
         <div className="space-y-3">
-          {socialLinks.map((social) => (
+          {socialLinks.map(social => (
             <Link
               key={social.name}
               href={social.href}
@@ -123,7 +136,12 @@ export default function Contact() {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
               </svg>
             </Link>
           ))}

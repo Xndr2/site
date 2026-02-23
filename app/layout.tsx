@@ -15,14 +15,22 @@ export const metadata: Metadata = {
     default: 'Xndr | Developer Portfolio',
     template: 'Xndr | %s',
   },
-  description: 'Self-taught developer from Belgium. Project Lead at HeadshotInteractive.com, Founder & Project Lead at FrontierNetwork.be',
+  description:
+    'Self-taught developer from Belgium. Project Lead at HeadshotInteractive.com, Founder & Project Lead at FrontierNetwork.be',
   metadataBase: new URL('https://xndr.site'),
   icons: {
     icon: '/icons/XndrPFP_cat.png',
     shortcut: '/icons/XndrPFP_cat.png',
     apple: '/icons/XndrPFP_cat.png',
   },
-  keywords: ['developer', 'portfolio', 'game development', 'Unreal Engine', 'web development', 'Belgium'],
+  keywords: [
+    'developer',
+    'portfolio',
+    'game development',
+    'Unreal Engine',
+    'web development',
+    'Belgium',
+  ],
   authors: [{ name: 'Xander', url: 'https://xndr.site' }],
   creator: 'Xander',
   openGraph: {
@@ -36,7 +44,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Xndr | Developer Portfolio',
-    description: 'Self-taught developer from Belgium specializing in game development and web applications.',
+    description:
+      'Self-taught developer from Belgium specializing in game development and web applications.',
     creator: '@Xndr___',
   },
   robots: {

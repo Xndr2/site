@@ -73,6 +73,9 @@ jspm_packages/
 # TernJS port file
 .tern-port
 
+# Planning files (GSD documentation — not source code)
+.planning/
+
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 

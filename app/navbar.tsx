@@ -51,7 +51,7 @@ export default function Navbar({ pageName = '' }: NavbarProps) {
           } w-full md:block md:w-auto`}
         >
           <ul className="text-center flex flex-col p-4 md:p-0 mt-4 bg-white rounded-xl md:flex-row md:gap-1 md:mt-0 md:bg-transparent shadow-lg md:shadow-none border border-slate-100 md:border-0">
-            {navLinks.map((link) => (
+            {navLinks.map(link => (
               <li key={link.href}>
                 <Link
                   href={link.href}
