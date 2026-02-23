@@ -37,6 +37,11 @@ const nextConfig = {
     return config;
   },
 
+  // Include content files in serverless function bundles
+  outputFileTracingIncludes: {
+    '/api/notify': ['./content/posts/**/*'],
+  },
+
   // Performance optimizations
   poweredByHeader: false,
   compress: true,
